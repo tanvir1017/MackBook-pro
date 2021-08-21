@@ -42,20 +42,22 @@
 
             <!-- storage slot -->
             <h4 class="fw-bold mt-5">Storage</h4>
-            <button class="btn btn-outline-dark p-2">256GB SSD storage</button>
-            <button class="btn btn-outline-dark p-2 ms-2">
+            <button id="ssd-128" class="btn btn-outline-dark p-2">
+              128GB SSD storage
+            </button>
+            <button id="ssd-256" class="btn btn-outline-dark p-2 ms-2">
               256GB SSD storage
             </button>
-            <button class="btn btn-outline-dark p-2 ms-2">
+            <button id="ssd-512" class="btn btn-outline-dark p-2 ms-2">
               512GB SSD storage
             </button>
 
             <!-- storage slot -->
             <h4 class="fw-bold mt-5">Delivery Options</h4>
-            <button class="btn btn-outline-dark p-2">
+            <button id="free-delivery" class="btn btn-outline-dark p-2">
               Friday,Aug 25 Free Prime Delivery
             </button>
-            <button class="btn btn-outline-dark p-2 ms-2">
+            <button id="fast-delivery" class="btn btn-outline-dark p-2 ms-2">
               Monday,Aug 21 Fast Delivery Charge $20
             </button>
 
@@ -102,7 +104,7 @@
                 />
                 <label for="floatingInput">Enter promo code</label>
               </div>
-              <button class="px-5 fw-bold btn btn-danger" disabled>
+              <button id="apply" class="px-5 fw-bold btn btn-danger">
                 Apply
               </button>
             </div>
@@ -111,7 +113,7 @@
       </div>
       <!-- total main amount  -->
       <hr />
-      <h2 class="text-center">Total : $ <span>1299</span></h2>
+      <h2 class="text-center">Total : $ <span id="sub-total">1299</span></h2>
     </main>
 
     <script src="/js/app.js"></script>
