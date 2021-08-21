@@ -19,7 +19,7 @@ let total = document.getElementById('total-cost');
 
 
 //8Gb ram event Listener
-ram8Gb.addEventListener('click', function ram8Cost(){
+ram8Gb.addEventListener('click', function (){
     extraRamCost.innerText = '0';
     const ramCostValue = parseInt(extraRamCost.innerText)
     let ramcostPrice = 1299 - ramCostValue;
@@ -30,7 +30,7 @@ ram8Gb.addEventListener('click', function ram8Cost(){
 });
 
 //16Gb ram event Listener
-ram16Gb.addEventListener('click', function ram16Cost(){
+ram16Gb.addEventListener('click', function (){
     extraRamCost.innerText = '180';
     const xtraRamCost = parseInt(extraRamCost.innerText)
     let ramcostPrice = 1299 + xtraRamCost;
@@ -38,12 +38,11 @@ ram16Gb.addEventListener('click', function ram16Cost(){
     getCalculate();
     subTotal();
     return ramcostPrice
-
 })
 
 
 //Xtra storage 128Gb
-ssd128.addEventListener('click', function ssd128(){
+ssd128.addEventListener('click', function (){
     extraStorage.innerText = '0'
     const xtraStorageCost = parseInt(extraStorage.innerText);
     let storagecostPrice = 1299 - xtraStorageCost;
@@ -54,7 +53,7 @@ ssd128.addEventListener('click', function ssd128(){
 })
 
 //Xtra storage 128Gb
-ssd256.addEventListener('click', function ssd256(){
+ssd256.addEventListener('click', function (){
     extraStorage.innerText = '100';
     const xtraStorageCost = parseInt(extraStorage.innerText);
     let storagecostPrice = 1299 + xtraStorageCost ;
@@ -65,7 +64,7 @@ ssd256.addEventListener('click', function ssd256(){
 })
 
 //Xtra storage 128Gb
-ssd512.addEventListener('click', function ssd512(){
+ssd512.addEventListener('click', function (){
     extraStorage.innerText = '180'
     const xtraStorageCost = parseInt(extraStorage.innerText);
     let storagecostPrice = 1299 + xtraStorageCost;
@@ -73,12 +72,13 @@ ssd512.addEventListener('click', function ssd512(){
     getCalculate();
     subTotal();
     return storagecostPrice
+ 
 })
 
 
 
 //free delivery
-freeDelivery.addEventListener('click', function freeDelivery(){
+freeDelivery.addEventListener('click', function (){
     deliveryCost.innerText = '0';
     const deliverCost = parseInt(deliveryCost.innerText);
     let deliveryPrice = 1299 - deliverCost;
@@ -88,7 +88,7 @@ freeDelivery.addEventListener('click', function freeDelivery(){
     return deliveryPrice
 })
 //fast delivery
-fastDelivery.addEventListener('click', function fastDelivery(){
+fastDelivery.addEventListener('click', function (){
     deliveryCost.innerText = '20';
     const deliverCost = parseInt(deliveryCost.innerText);
     let deliveryPrice = 1299 + deliverCost;
@@ -101,37 +101,26 @@ fastDelivery.addEventListener('click', function fastDelivery(){
 function getCalculate(){
     const extraRamCostValue = extraRamCost.innerText;
     const extraRamCostValueText = parseInt(extraRamCostValue);
-    
     const extraStorageValue = extraStorage.innerText;
     const extraStorageValueText = parseInt(extraStorageValue) ;
-    
     const deliveryCosts = deliveryCost.innerText;
     const extraDeliveryCostValueText = parseInt(deliveryCosts) ;
-
     let totalValueTextAmount = extraDeliveryCostValueText + extraStorageValueText + extraRamCostValueText + 1299;
 
     total.innerText = totalValueTextAmount ;
-    return total.innerText;
+    
+    return totalValueTextAmount;
 }
 function subTotal(){
-    const subTotal = document.getElementById('sub-total');
-    subTotal.innerText = getCalculate();
-    return subTotal.innerText
+    const subTotalValue = document.getElementById('sub-total');
+    let subTotals = subTotalValue.innerText = getCalculate();
+    return subTotals
 }
-
 document.getElementById('apply').addEventListener('click', function(){
-    calcPromo()
-})
-//sub total amount
-let discountPrice = subTotal();
-
-function calcPromo(){
     const promoInput = document.getElementById('promo-input').value;
     if(promoInput == 'stevekaku'){
-        const promoDiscount = discountPrice * 0.2;
-        const percentageMinus = discountPrice - promoDiscount;
-        const subTotal = document.getElementById('sub-total');
-        subTotal.innerText = percentageMinus; 
-
+    let promoDiscount = getCalculate() * 0.2;
+    let percentageMinus = getCalculate() - promoDiscount;
+    let subTotal = document.getElementById('sub-total').innerText = percentageMinus;
     }
-}
+})
